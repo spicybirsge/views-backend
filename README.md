@@ -12,7 +12,7 @@
 
 `PASSWORD=your emails password`
 
-`FRONTEND_URL=your frontend servers url`
+`FRONTEND_URL=your frontend servers url (do not end it with a /)`
 
 # Notes
 
