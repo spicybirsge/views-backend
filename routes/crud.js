@@ -32,7 +32,7 @@ router.post('/create', isvalidtoken, [
   views: 0,
   tags: req.body.tags,
   location: req.body.location || null,
-  theme: req.body.theme || "#16b7f2",
+  theme: req.body.theme || "#3673fc",
   gradient: req.body.gradient || "#000000",
   shortbio: req.body.shortbio,
   description: req.body.description,
@@ -123,7 +123,7 @@ router.post('/update', isvalidtoken, [
       
             tags: req.body.tags,
             location: req.body.location || null,
-            theme: req.body.theme || "#16b7f2",
+            theme: req.body.theme || "#3673fc",
             gradient: req.body.gradient || "#000000",
             shortbio: req.body.shortbio,
             description: req.body.description,
