@@ -80,6 +80,26 @@ router.get('/getcard', [
     
    
 })
+router.get('/getcardwithoutviewsupdate', [
+    body('owner', 'Please provide an owner of the card').isLength({min:2}),
+    body('name', 'Please provide the name of a card').isLength({min:1})
+], async (req, res) => {
+
+ const  errors = validationResult(req)
+    if(!errors.isEmpty()) {
+        return res.status(400).json({success: false,  errors: errors.array()})
+    }
+ cards.findOne({owner: req.body.owner, name:req.body.name}, async (err, data) => {
+     if(!data) {
+        return res.status(404).json({success: false, msg: "Card not found!"})
+     }
+  
+     return res.json({success: true, data})
+ })
+    
+    
+   
+})
 
 router.get('/getallcards', isvalidtoken, async (req, res) => {
     const accountdata = await account.findOne({_id: req.user.id, pid: req.user.pid}).select('-password').select('-verificationid')
