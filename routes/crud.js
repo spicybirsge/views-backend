@@ -59,7 +59,7 @@ await cards.create(data)
 return res.json({success: true, msg:"Card succesfully created!"})
 }) 
 
-router.get('/getcard', [
+router.post('/getcard', [
     body('owner', 'Please provide an owner of the card').isLength({min:2}),
     body('name', 'Please provide the name of a card').isLength({min:1})
 ], async (req, res) => {
@@ -80,7 +80,7 @@ router.get('/getcard', [
     
    
 })
-router.get('/getcardwithoutviewsupdate', [
+router.post('/getcardwithoutviewsupdate', [
     body('owner', 'Please provide an owner of the card').isLength({min:2}),
     body('name', 'Please provide the name of a card').isLength({min:1})
 ], async (req, res) => {
