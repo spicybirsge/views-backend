@@ -180,6 +180,6 @@ return res.json({success: true, token})
   }
 
 })
-// only thing left is crud endpoints
+
 
 module.exports = router;

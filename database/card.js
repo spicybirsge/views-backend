@@ -22,7 +22,12 @@ link2url: String,
 
 link3name: String,
 link3avatar: String,
-link3url: String
+link3url: String,
+
+
+link4name: String,
+link4avatar: String,
+link4url: String
 
 
 

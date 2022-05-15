@@ -47,7 +47,11 @@ router.post('/create', isvalidtoken, [
 
   link3name: req.body.link3name || null,
   link3avatar: req.body.link3avatar || null,
-  link3url: req.body.link3url || null
+  link3url: req.body.link3url || null,
+
+  link4name: req.body.link4name || null,
+  link4avatar: req.body.link4avatar || null,
+  link4url: req.body.link4url || null
   
 
  }
@@ -158,7 +162,11 @@ router.post('/update', isvalidtoken, [
           
             link3name: req.body.link3name || null,
             link3avatar: req.body.link3avatar || null,
-            link3url: req.body.link3url || null
+            link3url: req.body.link3url || null,
+            
+            link4name: req.body.link4name || null,
+            link4avatar: req.body.link4avatar || null,
+            link4url: req.body.link4url || null
             
           
            }
