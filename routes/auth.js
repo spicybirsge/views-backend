@@ -22,6 +22,10 @@ router.post('/register',  [
     const salt = await bcrypt.genSalt(10);
     const password = await bcrypt.hash(password1, salt);
     const name = req.body.name
+    const blacklist = ['home', 'dashboard', 'terms', 'privacy', 'trending', 'login' ,'register']
+    if(blacklist.includes(name)) {
+        return res.status(400).json({success: false, msg:'Forbidden name', error: 'Forbidden name'})
+    }
     try {
         const email1 = await account.findOne({email: email})
         if(email1) {
