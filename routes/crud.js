@@ -279,6 +279,19 @@ if(type === 'gradient') {
         const newgradient = await cards.findOne({name: req.body.name, owner: accountdata.name, ownerID: accountdata._id})
     return res.json({success: true, msg: 'Gradient has been updated', data: newgradient})
     })
+} 
+if(type === 'fontcolor') {
+    const fontcolor = req.body.fontcolor || '#212529'
+    cards.findOne({name: req.body.name, owner: accountdata.name, ownerID: accountdata._id}, async (err, data) => {
+        if(!data) {
+            return res.status(404).json({success: false, msg: 'Card not found', errors: 'Card not found'})
+        } 
+        data.fontcolor = fontcolor
+        await data.save()
+        const newfontcolor = await cards.findOne({name: req.body.name, owner: accountdata.name, ownerID: accountdata._id})
+        return res.json({success: true, msg: 'Font Color has been updated', data: newfontcolor})
+
+    })
 }
 
 
