@@ -16,4 +16,4 @@
 
 # Notes
 
-- Make sure to visit your google accounts settings which your gonna use here and enable "less secure apps"
+- Make sure to visit your google accounts settings which your gonna use here and enable "less secure apps".
